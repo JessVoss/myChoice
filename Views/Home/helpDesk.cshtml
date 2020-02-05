@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Inventory Help Desk";
+    string[] serviceDesk = { "Scrooge McDuck", "Tommy Pickles", "The Brain", "Kenny McCormick", "Buster Bunny", "Chucky Finster", "Daria Morgendorffer", "Max Goof", "Doug Funnie", "Stewie Griffin" };
+    int serDeskLen = serviceDesk.Length;
+    string[] technicalManagement = { "Johny Brovo", "Eric Cartman", "Stimpson Cat" };
+    int techManLen = technicalManagement.Length;
+    string[] applicationManagement = { "Scooby Doo", "Scrappy Doo", "Astro Jetson" };
+    int appManLen = applicationManagement.Length;
+    string[] iTOperationsManagement = { "Shaggy Rogers", "Fred Jones" };
+    int ITOperationLen = iTOperationsManagement.Length;
+    string[] thirdPartySupport = { "Wilma Flintstone", "Pebbles Flintstone", "Johnny Quest" };
+    int thirdPartyLen = thirdPartySupport.Length;
+    string[] requestFulfilment = { "Freddie Flintstone", "Barney Rubble", "Betty Rubble" };
+    int requestFuLen = requestFulfilment.Length;
+    int x = 0;
+}
+<hr />
+<h2>Service Desk</h2>
+@for (x = 0; x < serDeskLen; x++)
+{<p>@serviceDesk[x]</p>}
+<hr />
+<h2>Technical Management</h2>
+@for (x = 0; x < techManLen; x++)
+{<p>@technicalManagement[x]</p>}
+<hr />
+
+<h2>Application Management</h2>
+@foreach (var person in applicationManagement)
+{<p>@person</p>}
+<hr />
+
+<h2>IT Operation Management</h2>
+@foreach (var person in iTOperationsManagement)
+{<p>@person</p>}
+<hr />
+<h2>3rd Party Support</h2>
+@{
+    x = 0;
+    while (x < thirdPartyLen)
+    { <p>@thirdPartySupport[x]</p>
+    x += 1;
+}
+}
+<hr />
+<h2>Request Fulfilment</h2>
+@{
+    x = 0;
+    while (x < requestFuLen)
+    { <p>@requestFulfilment[x]</p>
+    x += 1;
+}
+}
+<hr />

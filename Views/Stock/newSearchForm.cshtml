@@ -1,0 +1,29 @@
+﻿@model myChoice.Models.inventory
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amount of Stock Form</title>
+    @Styles.Render("~/Content/theInventory.css")
+
+</head>
+<body>
+    
+    <header>
+        <h2>Search Form</h2>
+    </header>
+    <form name="Stock search" method="post">
+        <p>Item:<input type="text" name="nameOfItem" id="nameOfitem" /></p>
+        <p>Department Name:<input type="text" name="department" id="department" /></p>
+        <p>Amount In Stock 0-100:<input type="number" min="0" max="100" name="numberInStock" id="numberInStock" /></p>
+
+        <input type="submit" value="Submit Stock" />
+    </form>
+
+</body>
+</html>

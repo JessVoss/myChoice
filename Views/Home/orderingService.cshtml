@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Ordering Service";
+    var orderMessage = "";
+    if (IsPost)
+    {
+        var number1 = Request["onHand"];
+        var amountOnHand = number1.AsInt();
+        var number2 = Request["needed"];
+        var amountNeeded = number2.AsInt();
+        var message = "";
+
+        if (amountOnHand >= amountNeeded)
+        {
+            message = "You Dont need to order";
+        }
+        else
+        { 
+            message += "You need to Order";
+        }
+        orderMessage = message;
+    }
+    
+}
+<h2>Ordering Service</h2>
+<html>
+<body>
+    <form action="" method="post">
+        <p>
+            <label for="onHand">Amount On Hand:</label><br>
+            <input type="text" name="onHand" />
+        </p>
+        <p>
+            <label for="needed">Amount Needed:</label><br>
+            <input type="text" name="needed" />
+
+        </p>
+        <p><input type="submit" value="submit" /></p>
+    </form>
+    <p>@orderMessage</p>
+</body>
+</html>
